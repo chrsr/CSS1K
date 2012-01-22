@@ -1,0 +1,137 @@
+/* CSS1K entry
+ * "TheForce" by Chris Roberts (http://chrsr.com)
+ * This file is unminified for legibility, for size proof add '-min' to the end of the filename */
+
+body {
+    width: 100%;
+    min-width: 960px;
+    margin: 0 auto;
+    padding: 0 0 800px;
+    font: 120%/1.5 sans-serif;
+    color: #efcd71;
+    background-color: black;
+}
+
+a {
+    color: #e0c162;
+    text-decoration: none;
+    border-bottom: solid 1px #e0c162;
+}
+a:hover {
+    color: #e0c162;
+}
+
+body:after {
+    content: "The dark side";
+    position: fixed;
+    display: block;
+    top: 0;
+    width: 100%;
+    height: 350px;
+    background: -webkit-linear-gradient(top, rgba(0,0,0,0.90) 0%,rgba(0,0,0,0) 100%);
+    color: transparent;
+}
+
+header {
+    width: 80%;
+    padding: 0 10%;
+    max-width: 960px;
+    margin: 0 auto;
+    -webkit-perspective: 700;
+    -webkit-perspective-origin-x: 50%;
+    -webkit-perspective-origin-y: 5%;
+}
+
+@-webkit-keyframes scale {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(0.1);
+    }
+}
+
+h1 {
+    margin: 100px 0 500px;
+    font: 700;
+    font-size: 10em;
+    color: black;
+    text-align: center;
+    -webkit-text-stroke: #efcd71 3px;
+    -webkit-animation: scale 9s ease-out;
+}
+
+nav {
+    -webkit-transform: rotateX(45deg);
+    margin: 0 0 500px 0;
+}
+
+nav ul {
+    margin: 0 auto;
+}
+nav {
+    overflow: auto;
+}
+nav h2 {
+}
+nav ul {
+}
+nav li {
+    display: inline-block;
+    padding: 0 2px 0 2px;
+    text-align: justify;
+}
+nav li a {
+    border: 0px;
+    font-size: 1em;
+}
+nav a:last-child:before {
+    content: 'by ';
+    display: inline;
+}
+nav a:last-child:after {
+    content: ' |';
+}
+
+article header:before {
+    display: none;
+}
+
+article {
+    width: 80%;
+    padding: 0 10%;
+    max-width: 960px;
+    margin: 0 auto;
+    -webkit-perspective: 700;
+    -webkit-perspective-origin-x: 50%;
+    -webkit-perspective-origin-y: 5%;
+}
+
+article header,
+article section {
+    -webkit-transform: rotateX(45deg);
+}
+
+article section {
+    margin: 0 0 300px;
+}
+
+h2 {
+    text-transform: uppercase;
+}
+
+footer {
+    width: 80%;
+    padding: 0 10%;
+    max-width: 960px;
+    margin: 0 auto;
+    -webkit-perspective: 700;
+    -webkit-perspective-origin-x: 50%;
+    -webkit-perspective-origin-y: 5%;
+}
+
+footer p {
+    -webkit-transform: rotateX(45deg);
+    text-align: center;
+    font-size: 85%;
+}
