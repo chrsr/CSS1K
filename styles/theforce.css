@@ -4,36 +4,36 @@
 
 html {
     display: block;
-    position: fixed;
+    position: relative;
     width: 100%;
-
+    height: 2000px;
     font: 120%/1.5 sans-serif;
     color: #efcd71;
     background-color: black;
 
-    -webkit-perspective: 700;
+    -webkit-perspective: 1400;
     -webkit-perspective-origin-x: 50%;
-    -webkit-perspective-origin-y: 15%;
+    -webkit-perspective-origin-y: -10%;
 }
 
-html:after {
+head {
     content: "The dark side";
+    display: block;
     position: fixed;
-    display: none;
+    border: solid 1px red;
     top: 0;
     width: 100%;
-    height: 300px;
+    height: 100px;
     background: #000 -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
     color: transparent;
 }
 
 body {
+    position: absolute;
+    min-height: 2500px;
     max-width: 960px;
     margin: 0 auto;
-    max-height: 600px;
     -webkit-transform: rotateX(45deg);
-    overflow: scroll;
-    border: solid 1px red;
 }
 
 a {
@@ -60,7 +60,6 @@ header {
 
 h1 {
     position: absolute;
-    display: none;
     font: 700;
     font-size: 10em;
     color: black;
@@ -69,14 +68,9 @@ h1 {
     -webkit-animation: scale 9s ease-out;
 }
 
-nav {
-    display: inline;
-}
-
+nav,
 nav ul {
-    margin: 0 auto;
-}
-nav {
+    display: inline;
 }
 nav li {
     display: inline-block;
@@ -95,10 +89,7 @@ nav a:last-child:after {
     content: ' |';
 }
 
-article {
-    display: none;
-}
-
+article,
 article section {
     display: inline;
 }
@@ -108,11 +99,7 @@ h2 {
 }
 
 footer {
-    display: none;
-    width: 80%;
-    padding: 0 10%;
-    max-width: 960px;
-    margin: 0 auto;
+    display: inline;
 }
 
 footer p {
