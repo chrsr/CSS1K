@@ -35,11 +35,30 @@ head {
     position: fixed;
     z-index: 5;
     width: 100%;
-    height: 125px;
+    height: 400px;
     background-image: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
     color: transparent;
     content: "The dark side";
 }
+
+@-webkit-keyframes scroll-anim {
+    0% {
+        top: 0;
+    }
+    100% {
+        top: -2000px;
+    }
+}
+
+/*html:after {
+    position: absolute;
+    top: 0;
+    display: block;
+    color: #fff;
+    opacity: 1;
+    background: black;
+    content: " .      .         .         .   .       .          .         .       .                                                       .   ."
+}*/
 
 body {
     position: relative;
@@ -51,6 +70,10 @@ body {
     -webkit-perspective: 700;
     -webkit-perspective-origin: center 1200px;
     -webkit-transform-style: preserve-3d;
+
+    -webkit-animation: scroll-anim 50s ease-out 0 1;
+    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-delay: 10s;
 }
 
 body:after {
@@ -101,7 +124,7 @@ header,
 article {
     position: relative;
     text-align: center;
-    -webkit-transform: rotateX(5deg) translateZ(-200px) translateY(-100px);
+    -webkit-transform: rotateX(15deg) translateZ(-200px) translateY(-100px);
     opacity: 1;
 }
 
