@@ -123,16 +123,12 @@ nav a:last-child:before {
     display: inline;
 }
 nav a:last-child:after {
-    content: ' |';
-}
-
-article,
-article section {
-    display: inline;
+    content: ' (-o-)';
 }
 
 h2 {
     text-transform: uppercase;
+    padding-top: 40px;
 }
 
 footer {
