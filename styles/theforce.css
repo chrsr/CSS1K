@@ -30,50 +30,67 @@
 
 */
 
+html {
+    position: relative;
+    font: 100%/1.5 sans-serif
+}
+
 head {
-    display: block;
+    display: none;
     position: fixed;
     z-index: 5;
     width: 100%;
     height: 400px;
-    background-image: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%);
-    color: transparent;
-    content: "The dark side";
+    background-image: -webkit-linear-gradient(top, rgba(0,0,0,1) 0%, rgba(0,0,0,0) 100%)
 }
 
-@-webkit-keyframes scroll-anim {
+@-webkit-keyframes p {
     0% {
         top: 0;
     }
     100% {
-        top: -2000px;
+        top: 0; /*-2500px;*/
     }
 }
-
-/*html:after {
-    position: absolute;
-    top: 0;
-    display: block;
-    color: #fff;
-    opacity: 1;
-    background: black;
-    content: " .      .         .         .   .       .          .         .       .                                                       .   ."
-}*/
 
 body {
     position: relative;
     width: 960px;
     margin: 0 auto 1000px;
-    background-color: black;
-    font: 120%/1.5 sans-serif;
-    color: #efcd71;
+    background: #000;
+    color: #c90;
     -webkit-perspective: 700;
     -webkit-perspective-origin: center 1200px;
     -webkit-transform-style: preserve-3d;
-
-    -webkit-animation: scroll-anim 50s ease-out 0 1;
+    -webkit-animation: p 50s ease-out;
     -webkit-animation-fill-mode: forwards;
-    -webkit-animation-delay: 10s;
+    -webkit-animation-delay: 10s
+}
+
+@-webkit-keyframes fade {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+body:before {
+    display: block;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    width: 316px;
+    margin-left: -158px;
+    background: #000;
+    color: #6cc;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #fff;
+    content: "A long time ago in a galaxy far far away...";
+    opacity: 1;
+    -webkit-animation: fade 10s ease-out 0 1 forwards;
 }
 
 body:after {
@@ -82,23 +99,24 @@ body:after {
     width: 780px;
     margin: 0 auto;
     bottom: -980px;
-    left: 90px;
+    left: 180px;
     white-space: pre-wrap;
     font-family: monospace;
     text-align: left;
-    content: " .      .         .         .   . :::::+::::...      .          .         . \a     .         .      .    ..::.:::+++++:::+++++:+::.    .     . \a                        .:.  ..:+:..+|||+..::|+|+||++|:.             .     . \a            .   .    :::....:::::::::++||||O||O#OO|OOO|+|:.    . \a.      .      .    .:..:..::+||OO#|#|OOO+|O||####OO###O+:+|+               . \a                 .:...:+||O####O##||+|OO|||O#####O#O||OO|++||:     .    . \a  .             ..::||+++|+++++|+::|+++++O#O|OO|||+++..:OOOOO|+  .         . \a     .   .     +++||++:.:++:..+#|. ::::++|+++||++O##O+:.++|||#O+    . \a.           . ++++++++...:+:+:.:+: ::..+|OO++O|########|++++||##+            . \a  .       .  :::+++|O+||+::++++:::+:::+++::+|+O###########OO|:+OO       .  . \a     .       +:+++|OO+|||O:+:::::.. .||O#OOO||O||#@###@######:+|O|  . \a .          ::+:++|+|O+|||++|++|:::+O#######O######O@############O \a          . ++++: .+OO###O++++++|OO++|O#@@@####@##################+         . \a      .     ::::::::::::::::::::++|O+..+#|O@@@@#@###O|O#O##@#OO####     . \a .        . :. .:.:. .:.:.: +.::::::::  . +#:#@:#@@@#O||O#O@:###:#| .      . \a                           `. .:.:.:.:. . :.:.:%::%%%:::::%::::%::: \a.      .                                      `.:.:.:.:   :.:.:.:.  .   . \a           .                                                                . \a      . \a.          .                                                       .   . \a                                                                             . \a";
+    content: " .      .         .         .   . :::::+::::...      .          .         . \a     .         .      .    ..::.:::+++++:::+++++:+::.    .     . \a                        .:.  ..:+:..+|||+..::|+|+||++|:.             .     . \a            .   .    :::....:::::::::++||||O||O#OO|OOO|+|:.    . \a.      .      .    .:..:..::+||OO#|#|OOO+|O||####OO###O+:+|+               . \a                 .:...:+||O####O##||+|OO|||O#####O#O||OO|++||:     .    . \a  .             ..::||+++|+++++|+::|+++++O#O|OO|||+++..:OOOOO|+  .         . \a     .   .     +++||++:.:++:..+#|. ::::++|+++||++O##O+:.++|||#O+    . \a.           . ++++++++...:+:+:.:+: ::..+|OO++O|########|++++||##+            . \a  .       .  :::+++|O+||+::++++:::+:::+++::+|+O###########OO|:+OO       .  . \a     .       +:+++|OO+|||O:+:::::.. .||O#OOO||O||#@###@######:+|O|  . \a .          ::+:++|+|O+|||++|++|:::+O#######O######O@############O \a          . ++++: .+OO###O++++++|OO++|O#@@@####@##################+         . \a      .     ::::::::::::::::::::++|O+..+#|O@@@@#@###O|O#O##@#OO####     . \a .        . :. .:.:. .:.:.: +.::::::::  . +#:#@:#@@@#O||O#O@:###:#| .      . \a                           `. .:.:.:.:. . :.:.:%::%%%:::::%::::%:::";
 }
 
 a {
-    color: #e0c162;
+    color: #c90;
     text-decoration: none;
-    border-bottom: solid 1px #e0c162;
-}
-a:hover {
-    color: #e0c162;
+    border-bottom: solid 1px #c90;
 }
 
-@-webkit-keyframes scale {
+a:hover {
+    color: #00f;
+}
+
+@-webkit-keyframes s {
     0% {
         -webkit-transform: scale(1);
     }
@@ -110,14 +128,20 @@ a:hover {
 h1 {
     position: absolute;
     width: 100%;
-    top: -500px;
-    font: 700;
-    font-size: 10em;
-    color: black;
-    text-align: center;
-    -webkit-text-stroke: #efcd71 3px;
-    -webkit-animation: scale 10s ease-out 0 1;
-    -webkit-animation-fill-mode: forwards;
+    top: 0;
+    font-size: 13em;
+    color: #000;
+    -webkit-text-stroke: #c90 3px;
+    -webkit-animation: s 10s ease-out 0 1 forwards;
+}
+
+h2 {
+    text-transform: uppercase;
+    padding-top: 40px;
+}
+
+header {
+    font-size: 1.4em;
 }
 
 header,
@@ -128,37 +152,32 @@ article {
     opacity: 1;
 }
 
-nav,
-nav ul {
-    display: block;
-}
 nav li {
     display: inline-block;
-    padding: 0 2px 0 2px;
+    padding: 0 2px;
     text-align: justify;
 }
 nav li a {
-    border: 0px;
-    font-size: 1em;
+    border: 0;
 }
 nav a:last-child:before {
-    content: 'by ';
+    content: '(-o-) ';
     display: inline;
 }
-nav a:last-child:after {
-    content: ' (-o-)';
+
+article {
+    font-size: 1.4em;
 }
 
-h2 {
-    text-transform: uppercase;
-    padding-top: 40px;
+section li {
+    list-style: none;
 }
 
 footer {
     display: inline;
+    font-size: 1.4em;
 }
 
 footer p {
     text-align: center;
-    font-size: 85%;
 }
