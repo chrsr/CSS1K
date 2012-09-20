@@ -36,7 +36,7 @@ html {
 }
 
 head {
-    display: none;
+    display: block;
     position: fixed;
     z-index: 5;
     width: 100%;
@@ -49,24 +49,50 @@ head {
         top: 0;
     }
     100% {
-        top: 0; /*-2500px;*/
+        top: -2500px;
     }
 }
+
+@-webkit-keyframes s {
+    0% {
+        -webkit-transform: scale(1);
+    }
+    100% {
+        -webkit-transform: scale(1);
+    }
+}
+
+/*
+animation-name: none
+animation-duration: 0s
+animation-timing-function: ease
+animation-delay: 0s
+animation-iteration-count: 1
+animation-direction: normal
+animation-fill-mode: none
+*/
 
 body {
     position: relative;
     width: 960px;
-    margin: 0 auto 1000px;
+    height: 2500px;
+    margin: 0 auto;
     background: #000;
     color: #c90;
     -webkit-perspective: 700;
     -webkit-perspective-origin: center 1200px;
     -webkit-transform-style: preserve-3d;
-    -webkit-animation: p 50s ease-out;
-    -webkit-animation-fill-mode: forwards;
-    -webkit-animation-delay: 10s
+    -webkit-animation: p 60s linear 9s 1 forwards;
+    /*-webkit-transition: top 30s linear;*/
 }
 
+/* Another animation option
+body:hover {
+    top: -1000px;
+}
+*/
+
+/* enable this when supported
 @-webkit-keyframes fade {
     0% {
         opacity: 1;
@@ -75,11 +101,12 @@ body {
         opacity: 0;
     }
 }
+*/
 
-body:before {
+/*body:after {
     display: block;
-    position: absolute;
-    top: 200px;
+    position: fixed;
+    bottom: -1000px;
     left: 50%;
     width: 316px;
     margin-left: -158px;
@@ -90,49 +117,44 @@ body:before {
     text-shadow: 1px 1px 2px #fff;
     content: "A long time ago in a galaxy far far away...";
     opacity: 1;
-    -webkit-animation: fade 10s ease-out 0 1 forwards;
-}
+    animation-name: fade;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+}*/
 
+
+/* Death star killed my file size
 body:after {
     display: block;
     position: absolute;
     width: 780px;
     margin: 0 auto;
-    bottom: -980px;
+    bottom: -800px;
     left: 180px;
     white-space: pre-wrap;
     font-family: monospace;
     text-align: left;
     content: " .      .         .         .   . :::::+::::...      .          .         . \a     .         .      .    ..::.:::+++++:::+++++:+::.    .     . \a                        .:.  ..:+:..+|||+..::|+|+||++|:.             .     . \a            .   .    :::....:::::::::++||||O||O#OO|OOO|+|:.    . \a.      .      .    .:..:..::+||OO#|#|OOO+|O||####OO###O+:+|+               . \a                 .:...:+||O####O##||+|OO|||O#####O#O||OO|++||:     .    . \a  .             ..::||+++|+++++|+::|+++++O#O|OO|||+++..:OOOOO|+  .         . \a     .   .     +++||++:.:++:..+#|. ::::++|+++||++O##O+:.++|||#O+    . \a.           . ++++++++...:+:+:.:+: ::..+|OO++O|########|++++||##+            . \a  .       .  :::+++|O+||+::++++:::+:::+++::+|+O###########OO|:+OO       .  . \a     .       +:+++|OO+|||O:+:::::.. .||O#OOO||O||#@###@######:+|O|  . \a .          ::+:++|+|O+|||++|++|:::+O#######O######O@############O \a          . ++++: .+OO###O++++++|OO++|O#@@@####@##################+         . \a      .     ::::::::::::::::::::++|O+..+#|O@@@@#@###O|O#O##@#OO####     . \a .        . :. .:.:. .:.:.: +.::::::::  . +#:#@:#@@@#O||O#O@:###:#| .      . \a                           `. .:.:.:.:. . :.:.:%::%%%:::::%::::%:::";
-}
+}*/
 
 a {
     color: #c90;
     text-decoration: none;
-    border-bottom: solid 1px #c90;
 }
 
 a:hover {
-    color: #00f;
-}
-
-@-webkit-keyframes s {
-    0% {
-        -webkit-transform: scale(1);
-    }
-    100% {
-        -webkit-transform: scale(0);
-    }
+    color: #6cc;
 }
 
 h1 {
     position: absolute;
-    width: 100%;
-    top: 0;
+    top: -800px;
     font-size: 13em;
+    font-weight: bold;
     color: #000;
-    -webkit-text-stroke: #c90 3px;
-    -webkit-animation: s 10s ease-out 0 1 forwards;
+    -webkit-text-stroke: #c90 5px;
+    -webkit-animation: s 10s ease-out 500ms 1 forwards;
 }
 
 h2 {
@@ -149,16 +171,12 @@ article {
     position: relative;
     text-align: center;
     -webkit-transform: rotateX(15deg) translateZ(-200px) translateY(-100px);
-    opacity: 1;
 }
 
 nav li {
     display: inline-block;
     padding: 0 2px;
     text-align: justify;
-}
-nav li a {
-    border: 0;
 }
 nav a:last-child:before {
     content: '(-o-) ';
@@ -181,3 +199,6 @@ footer {
 footer p {
     text-align: center;
 }
+
+/* currently 1195kb */
+/* http://refresh-sf.com/yui/ */
